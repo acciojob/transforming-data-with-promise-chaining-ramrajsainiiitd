@@ -12,15 +12,17 @@ start.addEventListener("click",()=>{
 
   promise1.then((num)=>{
     output.textContent = `Result: ${num}`;
+    console.log("promise1:");
     return num;
   }).then((num)=>{
     return new Promise((resolve)=>{
-      setTimeout(()=>{
-        resolve(num*2);
-      }, 1000);
+        setTimeout(()=>{
+            resolve(num*2);
+        }, 1000);
     });
   }).then((num)=>{
     output.textContent = `Result: ${num}`;
+    console.log("promise2:");
     return num;
   }).then((num)=>{
     return new Promise((resolve)=>{
@@ -31,6 +33,7 @@ start.addEventListener("click",()=>{
   })
     .then((num)=>{
       output.textContent = `Result: ${num}`;
+      console.log("promise3:");
       return num;
     })
     // promise 4
@@ -40,6 +43,7 @@ start.addEventListener("click",()=>{
       }, 1000);
     }).then((num)=>{
       output.textContent = `Result: ${num}`;
+      console.log("promise4:");
       return num;
     })
     // promise 5
@@ -49,6 +53,7 @@ start.addEventListener("click",()=>{
       }, 1000);
     }).then((num)=>{
       output.textContent = `Result: ${num}`;
+      console.log("promise5:");
     }).catch((e)=>{
 console.log(e);
     })
