@@ -12,17 +12,17 @@ start.addEventListener("click",()=>{
 
   promise1.then((num)=>{
     output.textContent = `Result: ${num}`;
-    console.log("promise1:");
+    // console.log("promise1:");
     return num;
   }).then((num)=>{
-    return new Promise((resolve)=>{
+  return new Promise((resolve)=>{
         setTimeout(()=>{
-            resolve(num*2);
+        resolve(num*2);
         }, 1000);
     });
   }).then((num)=>{
     output.textContent = `Result: ${num}`;
-    console.log("promise2:");
+    // console.log("promise2:");
     return num;
   }).then((num)=>{
     return new Promise((resolve)=>{
@@ -30,30 +30,25 @@ start.addEventListener("click",()=>{
         resolve(num-3);
       }, 1000);
     });
-  })
-    .then((num)=>{
-      output.textContent = `Result: ${num}`;
-      console.log("promise3:");
-      return num;
-    })
-    // promise 4
-    .then((num)=>{
+  }).then((num)=>{
+    output.textContent = `Result: ${num}`;
+    // console.log("promise3:");
+    return num;
+    }).then((num)=>{
       return new Promise((resolve)=>{
         resolve(num/2);
       }, 1000);
     }).then((num)=>{
       output.textContent = `Result: ${num}`;
-      console.log("promise4:");
+      // console.log("promise4:");
       return num;
-    })
-    // promise 5
-    .then((num)=>{
+    }).then((num)=>{
       return new Promise((resolve)=>{
         resolve(num + 10);
       }, 1000);
     }).then((num)=>{
       output.textContent = `Result: ${num}`;
-      console.log("promise5:");
+      // console.log("promise5:");
     }).catch((e)=>{
 console.log(e);
     })
