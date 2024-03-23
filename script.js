@@ -16,7 +16,7 @@ start.addEventListener("click", () => {
     .then((num) => {
         return new Promise((resolve) => {
             setTimeout(() => {
-                resolve(num * 2);
+                resolve(num);
             }, 2000);
         });
     })
@@ -27,7 +27,7 @@ start.addEventListener("click", () => {
     .then((num) => {
         return new Promise((resolve) => {
             setTimeout(() => {
-                resolve(num - 3);
+                resolve(num*2);
             }, 1000);
         });
     })
@@ -38,7 +38,7 @@ start.addEventListener("click", () => {
     .then((num) => {
         return new Promise((resolve) => {
             setTimeout(() => {
-                resolve(num / 2);
+                resolve(num-3);
             }, 1000);
         });
     })
@@ -49,12 +49,24 @@ start.addEventListener("click", () => {
     .then((num) => {
         return new Promise((resolve) => {
             setTimeout(() => {
-                resolve(num + 10);
+                resolve(num/2);
             }, 1000);
         });
     })
     .then((num) => {
         output.textContent = `Result: ${num}`;
+        return num;
+    })
+    .then((num) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(num+10);
+            }, 1000);
+        });
+    })
+    .then((num) => {
+        output.textContent = `Result: ${num}`;
+        return num;
     })
     .catch((error) => {
         console.error(error);
