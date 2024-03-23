@@ -1,4 +1,3 @@
-//your JS code here. If required.
 let input = document.getElementById('ip');
 let start = document.getElementById('btn');
 let output = document.getElementById('output');
@@ -11,45 +10,48 @@ start.addEventListener("click",()=>{
   });
 
   promise1.then((num)=>{
-    output.textContent = `Result: ${num}`;
-    // console.log("promise1:");
+    output.textContent = `Result : ${num}`;
     return num;
-  }).then((num)=>{
-  return new Promise((resolve)=>{
-        setTimeout(()=>{
+  })
+  .then((num)=>{
+    return new Promise((resolve)=>{
+      setTimeout(()=>{
         resolve(num*2);
-        }, 1000);
+      }, 1000);
     });
   }).then((num)=>{
-    output.textContent = `Result: ${num}`;
-    // console.log("promise2:");
+    output.textContent = `Result : ${num}`;
     return num;
-  }).then((num)=>{
+  })
+  .then((num)=>{
     return new Promise((resolve)=>{
       setTimeout(()=>{
         resolve(num-3);
       }, 1000);
     });
   }).then((num)=>{
-    output.textContent = `Result: ${num}`;
-    // console.log("promise3:");
+    output.textContent = `Result : ${num}`;
     return num;
-    }).then((num)=>{
-      return new Promise((resolve)=>{
+  })
+  .then((num)=>{
+    return new Promise((resolve)=>{
+      setTimeout(()=>{
         resolve(num/2);
       }, 1000);
-    }).then((num)=>{
-      output.textContent = `Result: ${num}`;
-      // console.log("promise4:");
-      return num;
-    }).then((num)=>{
-      return new Promise((resolve)=>{
+    });
+  }).then((num)=>{
+    output.textContent = `Result : ${num}`;
+    return num;
+  })
+  .then((num)=>{
+    return new Promise((resolve)=>{
+      setTimeout(()=>{
         resolve(num + 10);
       }, 1000);
-    }).then((num)=>{
-      output.textContent = `Result: ${num}`;
-      // console.log("promise5:");
-    }).catch((e)=>{
-console.log(e);
-    })
+    });
+  }).then((num)=>{
+    output.textContent = `Result : ${num}`;
+  }).catch((e)=>{
+    console.log(e);
+  })
 });
