@@ -65,7 +65,7 @@ start.addEventListener("click", () => {
         });
     })
     .then((num) => {
-        output.textContent = `Result: ${num}`;
+        output.textContent = `Final Result: ${num}`;
         return num;
     })
     .catch((error) => {
